@@ -46,7 +46,9 @@ export const Crudform = () => {
                 required
               ></textarea>
 
-              <button type="submit">Add Todo</button>
+              <button type="submit">
+                {selectedTask ? "Update" : "Add Todo"}
+              </button>
             </form>
           </div>
         </div>
