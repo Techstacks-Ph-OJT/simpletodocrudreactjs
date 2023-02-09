@@ -1,0 +1,205 @@
+.App {
+  text-align: center;
+}
+body {
+  background-image: url(./images/blob-scene-haikei.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.addctn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  /* background-color: greenyellow; */
+}
+.walana {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.walana img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 50px;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(67, 214, 133);
+  border: 5px solid #333;
+  border-radius: 12px;
+}
+.close-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #333;
+  font-size: 3rem;
+  font-weight: 800;
+  height: 50px;
+  cursor: pointer;
+  padding: 0.2em;
+}
+.forms {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1em;
+  background-color: #ffff;
+  border-top: 5px solid #333;
+  width: 35rem;
+  height: 20rem;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 1.2em;
+}
+.forms .titleform {
+  padding: 0.4em;
+
+  width: 95%;
+  border: none;
+  outline: none;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-shadow: 2px 2px #43d685;
+  background-color: #43d6852e;
+}
+.forms textarea {
+  width: 95.8%;
+  height: 100%;
+  outline: none;
+  padding-left: 1em;
+}
+.forms button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 2rem;
+  background-color: #43d685;
+  border-radius: 18px;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  text-shadow: 2px 2px #fff;
+  border: 3px solid #333;
+}
+.modal-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20em;
+}
+.modal-top label {
+  color: #ffff;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  padding-left: 6em;
+  padding-top: 2em;
+  height: 60vh;
+}
+.card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+  /* background-color: red; */
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  padding: 0.5em;
+  border-radius: 12px;
+  width: 18rem;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  /* background-color: green; */
+}
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  margin-top: 2rem;
+  /* background-color: red; */
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 0.4em;
+
+  width: 100%;
+}
+.content-btn {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  /* background-color: blue; */
+  width: 100%;
+}
+.content-btn p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-left: 0.7em;
+
+  width: 50%;
+}
+.delete {
+  background-color: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.delete img {
+  display: block;
+  height: auto;
+  width: 100%;
+  max-width: 50px;
+}
+label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  /* background-color: blue; */
+}
+.bookmark {
+  margin-top: 0.4em;
+  width: 28px;
+  height: 32px;
+}
