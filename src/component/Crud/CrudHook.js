@@ -1,4 +1,7 @@
-import { useState, useRef } from "react";
+import { useState, useRef, createContext, useEffect } from "react";
+
+export const TodoContext = createContext(null);
+
 export const CrudHook = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
@@ -30,31 +33,40 @@ export const CrudHook = () => {
         };
 
     if (selectedTask) {
-      setTask(
-        getTask.map((task) => {
-          if (task.id === selectedTask.id) {
-            return todoTask;
-          }
-          return task;
-        })
-      );
+      const updated = getTask.map((task) => {
+        if (task.id === selectedTask.id) {
+          return todoTask;
+        }
+        return task;
+      });
+      setTask(updated);
+      localStorage.setItem("tasks", JSON.stringify(updated));
     } else {
       setTask([...getTask, todoTask]);
+      localStorage.setItem("tasks", JSON.stringify([...getTask, todoTask]));
     }
 
     handleCloseModal();
     setSelectedTask(null);
   };
+
+  useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    setTask(savedTasks);
+  }, []);
+
   const handleUpdate = (task) => {
     setSelectedTask(task);
     handleOpenModal();
   };
 
   const deletehandler = (event) => {
-    console.log(event);
-    setTask(getTask.filter((task) => task.id !== event));
+    const deleted = getTask.filter((task) => task.id !== event);
+    setTask(deleted);
+    localStorage.setItem("tasks", JSON.stringify(deleted));
     setShowModal(false);
   };
+
   return {
     handleOpenModal,
     handleCloseModal,
