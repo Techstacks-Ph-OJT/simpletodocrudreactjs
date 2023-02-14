@@ -1,6 +1,6 @@
 import { CrudDisplay } from "./CrudDisplay";
-import { CrudHook } from "./CrudHook";
-
+import { useContext } from "react";
+import { CrudContext } from "./CrudContext";
 export const Crudform = () => {
   const {
     handleOpenModal,
@@ -13,7 +13,7 @@ export const Crudform = () => {
     deletehandler,
     handleUpdate,
     selectedTask,
-  } = CrudHook();
+  } = useContext(CrudContext);
   return (
     <div className="wrapper">
       <div className="addctn">

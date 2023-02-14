@@ -1,9 +1,9 @@
-import { Crudform } from "../Crud/Crudform";
+import { CrudHook } from "../Crud/CrudHook";
 
 export const Crudpage = () => {
   return (
     <div>
-      <Crudform />
+      <CrudHook />
     </div>
   );
 };

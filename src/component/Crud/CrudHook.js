@@ -1,7 +1,6 @@
-import { useState, useRef, createContext, useEffect } from "react";
-
-export const TodoContext = createContext(null);
-
+import { useState, useRef, useEffect } from "react";
+import { CrudContext } from "./CrudContext";
+import { Crudform } from "./Crudform";
 export const CrudHook = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
@@ -66,17 +65,21 @@ export const CrudHook = () => {
     localStorage.setItem("tasks", JSON.stringify(deleted));
     setShowModal(false);
   };
-
-  return {
-    handleOpenModal,
-    handleCloseModal,
-    handleSubmit,
-    deletehandler,
-    handleUpdate,
-    selectedTask,
-    showModal,
-    titleInput,
-    textboxInput,
-    getTask,
+  const values = {
+    handleOpenModal: handleOpenModal,
+    handleCloseModal: handleCloseModal,
+    handleSubmit: handleSubmit,
+    deletehandler: deletehandler,
+    handleUpdate: handleUpdate,
+    selectedTask: selectedTask,
+    showModal: showModal,
+    titleInput: titleInput,
+    textboxInput: textboxInput,
+    getTask: getTask,
   };
+  return (
+    <CrudContext.Provider value={values}>
+      <Crudform />
+    </CrudContext.Provider>
+  );
 };
